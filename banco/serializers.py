@@ -6,8 +6,10 @@ class ClienteS (serializers.ModelSerializer):
         model = Clientes
         fields = ("id","nombre","apellidoPaterno",
                  "apellidoMaterno","correo")
-
+        #depth = 1
 class CuentaS (serializers.ModelSerializer):
+    #cliente=ClienteS(many=True,read_only=True)
     class Meta:
         model=Cuentas
         fields = ("id","numero_tarjeta","saldo")
+        #depth = 1
