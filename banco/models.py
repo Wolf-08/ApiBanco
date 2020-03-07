@@ -14,12 +14,15 @@ class Clientes (models.Model):
     
 class Cuentas(models.Model):
     numero_tarjeta=models.CharField(max_length=15)
-    saldo=models.PositiveIntegerField(default=0)
-    cliente=models.ForeignKey(Clientes,on_delete=models.CASCADE)
+    saldo=models.CharField(max_length=10)
+    cliente=models.ForeignKey(Clientes,on_delete=models.CASCADE,related_name="usuario")
     fecha_consulta= models.DateTimeField(default=timezone.now)
     def __str__(self):
         return str(self.id)
 class CuentaCliente(models.Model):
-    cuenta_id =    models.ForeignKey(Cuentas,on_delete=models.CASCADE)
-    cliente_id =  models.ForeignKey(Clientes,on_delete=models.CASCADE)
+    cuenta_id =  models.ForeignKey(Cuentas,on_delete=models.CASCADE)
+    cliente_id = models.ForeignKey(Clientes,on_delete=models.CASCADE)
     fecha_consultaC = models.DateTimeField(default=timezone.now)
+    #saldo=models.CharField(max_length=10)
+    def __str__(self):
+        return str(self.cliente_id)

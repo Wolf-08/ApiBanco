@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!--Usuario-->
+<form action="/cliente", method="POST">
+    <h2>Acceso a usuario</h2>
+    <input type="password" name="user_id" placeholder="Contraseña">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="text" name="ap_pat" placeholder="Apellido Paterno">
+    <input type="text" name="ap_mat" placeholder="Apellido Materno">
+   <!--input type="text" name="correo"  placeholder="correo" -->
+    <button type="submit"> Entrar </button>
+</form>
+
+<!--Cuenta Bancaria-->
+
+<form action="/cajero", method="POST">
+    <h2>Acceso a cuentas </h2>
+    <input type="password" name="id_cuenta" placeholder="Contraseña">
+    <input type="text" name="ap_pat" placeholder="Apellido Paterno">
+    <input type="text" name="ap_mat" placeholder="Apellido Materno">
+    <button type="submit"> Entrar </button>
+</form>
+<!--Cuenta Bancaria Compartida-->
+<form action="/compartida", method="POST">
+    <h2>Acceso a cuentas Compartidas</h2>
+    <input type="password" name="id_cuentaC" placeholder="Contraseña">
+    <input type="text" name="ap_pat" placeholder="Apellido Paterno">
+    <input type="text" name="ap_mat" placeholder="Apellido Materno">
+    <button type="submit"> Entrar </button>
+</form>
+{% endblock %}
+
+<body>
+
+</body>

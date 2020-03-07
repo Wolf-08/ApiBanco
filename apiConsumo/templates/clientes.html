@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <table>
+        <tr>
+        <th>id Cuenta</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>correo</th>
+        </tr>
+    <td>{{ datos["id"] }}</td> 
+    <td>{{ datos["apellidoPaterno"] }}</td> 
+    <td>{{ datos["apellidoMaterno"] }}</td> 
+    <td>{{ datos["correo"] }}</td> 
+</tr>
+</table>
+</div>
+
+{% endblock %}

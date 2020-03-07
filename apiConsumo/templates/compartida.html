@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <table>
+        <tr>
+        <th>id</th>
+        <th>Titular</th>
+        <th>User</th>
+        <th>saldo</th>
+        <th>Ultima Consulta</th>
+
+        </tr>
+   
+    <td>{{ datos["id"] }}</td> 
+    <td>{{ datos["titular"] }}</td>
+    <td>{{ datos["user"] }}</td>
+    <td>{{ datos["saldo"] }}</td> 
+    <td>{{ datos["fecha_consultaC"] }}</td> 
+</tr>   
+</table>
+</div>
+
+{% endblock %}

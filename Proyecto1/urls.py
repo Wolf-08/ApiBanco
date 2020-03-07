@@ -21,10 +21,14 @@ from banco import views
 router = routers.DefaultRouter()
 router.register(r'clientes',views.ClienteSview,'banco')
 router.register(r'cuentas',views.CuentaSview,'banco')
+router.register(r'cuentaCliente',views.CuentaClienteView,'banco')
+#router.register(r'clientesV',views.OnlyVIsta,'banco')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/",include(router.urls)),
+    path("clientesV/",views.OnlyVIstaClientes.as_view()),
+    path("cuentasV/",views.OnlyVIstaCuentas.as_view())
     #path("cuentas",include("banco.urls")),
 ]
